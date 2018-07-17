@@ -654,7 +654,7 @@ void adventurerCard(int currentPlayer, int temphand[], int z, struct gameState *
 	
 	// BUG INSERTED BELOW: allows player to reveal cards from deck until 3 treasure cards are revealed 
 	// Note: previously the line was: while(drawntreasure < 2) 
-	while(drawntreasure<2){
+	while(drawntreasure<3){
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(currentPlayer, state);
 		}
@@ -707,7 +707,7 @@ void smithyCard(int currentPlayer, int handPos, struct gameState *state)
 	int i;
 	// BUG INSERTED BELOW: allows player to add 4 cards to their hand 
 	// Note: previously the line was: for(i=0; i<3; i++)
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
           drawCard(currentPlayer, state);
 	}

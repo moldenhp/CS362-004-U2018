@@ -1,0 +1,361 @@
+#######################################################
+# Result for running all unit tests for Assignment 3: #
+#######################################################
+unittest1.c:
+Testing -> updateCoins()
+
+Treasure cards: 0
+Bonus: 1
+
+Coin Count - copper
+Actual: 1
+Expected: 1
+Test: SUCCESSFULLY COMPLETED
+
+Coin Count - silver
+Actual: 1
+Expected: 1
+Test: SUCCESSFULLY COMPLETED
+
+Coin Count - gold
+Actual: 1
+Expected: 1
+Test: SUCCESSFULLY COMPLETED
+
+
+Treasure cards: 5
+Bonus: 3
+
+Coin Count - copper
+Actual: 8
+Expected: 8
+Test: SUCCESSFULLY COMPLETED
+
+Coin Count - silver
+Actual: 13
+Expected: 13
+Test: SUCCESSFULLY COMPLETED
+
+Coin Count - gold
+Actual: 18
+Expected: 18
+Test: SUCCESSFULLY COMPLETED
+
+TEST SUCCESSFULLY COMPLETED
+
+File 'unittest1.c'
+Lines executed:91.49% of 47
+Creating 'unittest1.c.gcov'
+
+File 'dominion.c'
+Lines executed:16.13% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
+unittest2.c:
+Testing -> isGameOver()
+
+Province cards empty
+Test: SUCCESSFULLY COMPLETED
+
+Three supply piles empty
+Test: SUCCESSFULLY COMPLETED
+
+Province cards not empty
+
+Three supply piles not empty
+Test: SUCCESSFULLY COMPLETED
+
+TEST SUCCESSFULLY COMPLETED
+
+File 'unittest2.c'
+Lines executed:87.88% of 33
+Creating 'unittest2.c.gcov'
+
+File 'dominion.c'
+Lines executed:17.55% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
+unittest3.c:
+Testing -> shuffle()
+
+Player deck count is 0
+Test: SUCCESSFULLY COMPLETED
+
+Player deck count is 10 before and after shuffle
+Test: SUCCESSFULLY COMPLETED
+
+Cards are shuffled
+Test: SUCCESSFULLY COMPLETED
+
+TEST SUCCESSFULLY COMPLETED
+
+File 'unittest3.c'
+Lines executed:84.85% of 33
+Creating 'unittest3.c.gcov'
+
+File 'dominion.c'
+Lines executed:16.13% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
+unittest4.c:
+Testing -> gainCard()
+
+Gold supply pile is empty
+Test: SUCCESSFULLY COMPLETED
+
+Add card to deck
+Test: SUCCESSFULLY COMPLETED
+
+Add card to hand
+Test: SUCCESSFULLY COMPLETED
+
+Add card to discard pile
+Test: SUCCESSFULLY COMPLETED
+
+Decrease gold supply
+Test: SUCCESSFULLY COMPLETED
+
+TEST SUCCESSFULLY COMPLETED
+
+File 'unittest4.c'
+Lines executed:89.19% of 37
+Creating 'unittest4.c.gcov'
+
+File 'dominion.c'
+Lines executed:18.44% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
+cardtest1.c:
+Testing -> adventurerCard()
+
+Player0 gains 2 cards
+Test: FAILED
+
+Player0 gains 2 treasure cards
+Test: FAILED
+
+No change to victory card piles
+Province Pile
+Test: SUCCESSFULLY COMPLETED
+Duchy Pile
+Test: SUCCESSFULLY COMPLETED
+Estate Pile
+Test: SUCCESSFULLY COMPLETED
+
+No change to kingdom card piles
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+
+Player1 was not affected
+Hand Count
+Test: SUCCESSFULLY COMPLETED
+Deck Count
+Test: SUCCESSFULLY COMPLETED
+
+TEST FAILED
+Fails: 2
+File 'cardtest1.c'
+Lines executed:98.21% of 56
+Creating 'cardtest1.c.gcov'
+
+File 'dominion.c'
+Lines executed:19.68% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
+cardtest2.c:
+Testing -> smithyCard()
+
+Player0 gains 3 cards
+Test: SUCCESSFULLY COMPLETED
+
+Player0 gains 3 cards from his own pile
+Test: FAILED
+
+No change to victory card piles
+Province Pile
+Test: SUCCESSFULLY COMPLETED
+Duchy Pile
+Test: SUCCESSFULLY COMPLETED
+Estate Pile
+Test: SUCCESSFULLY COMPLETED
+
+No change to kingdom card piles
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+
+Player1 was not affected
+Hand Count
+Test: SUCCESSFULLY COMPLETED
+Deck Count
+Test: SUCCESSFULLY COMPLETED
+
+TEST FAILED
+Fails: 1
+File 'cardtest2.c'
+Lines executed:97.83% of 46
+Creating 'cardtest2.c.gcov'
+
+File 'dominion.c'
+Lines executed:20.74% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
+cardtest3.c:
+Testing -> council_roomCard()
+
+Player0 gains 4 cards
+Test: SUCCESSFULLY COMPLETED
+
+Player0 gains 4 cards from his own pile
+Test: FAILED
+
+Player0 number of buys increments
+Test: SUCCESSFULLY COMPLETED
+
+No change to victory card piles
+Province Pile
+Test: SUCCESSFULLY COMPLETED
+Duchy Pile
+Test: SUCCESSFULLY COMPLETED
+Estate Pile
+Test: SUCCESSFULLY COMPLETED
+
+No change to kingdom card piles
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+
+Player1 gains a card
+Test: SUCCESSFULLY COMPLETED
+
+Player1 gains a card from his own deck
+Test: SUCCESSFULLY COMPLETED
+
+TEST FAILED
+Fails: 1
+File 'cardtest3.c'
+Lines executed:97.87% of 47
+Creating 'cardtest3.c.gcov'
+
+File 'dominion.c'
+Lines executed:21.45% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
+cardtest4.c:
+Testing -> villageCard()
+
+Player0 gains 1 card
+Test: FAILED
+
+Player0 gains 1 card from his own pile
+Test: SUCCESSFULLY COMPLETED
+
+Player0 gains two actions
+Test: FAILED
+
+No change to victory card piles
+Province Pile
+Test: SUCCESSFULLY COMPLETED
+Duchy Pile
+Test: SUCCESSFULLY COMPLETED
+Estate Pile
+Test: SUCCESSFULLY COMPLETED
+
+Player1 was not affected
+Hand Count
+Test: SUCCESSFULLY COMPLETED
+Deck Count
+Test: SUCCESSFULLY COMPLETED
+
+No change to kingdom card piles
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+checking card piles...
+Test: SUCCESSFULLY COMPLETED
+
+TEST FAILED
+Fails: 2
+File 'cardtest4.c'
+Lines executed:97.92% of 48
+Creating 'cardtest4.c.gcov'
+
+File 'dominion.c'
+Lines executed:20.74% of 564
+Creating 'dominion.c.gcov'
+
+------------------------------
