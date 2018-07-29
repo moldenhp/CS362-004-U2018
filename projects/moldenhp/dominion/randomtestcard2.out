@@ -1,3 +1,31 @@
+#############################
+~~~ RANDOM TEST GENERATOR ~~~
+File: randomcardtest2.c
+Card tested: Council Room card
+#############################
+
+~~~ TEST RESULTS ~~~
+PASSED TESTS: 0
+FAILED TESTS: 10000
+
+***** FAILURE INFO *****
+drawCard() failed: 0
+cardEffect() failed: 0
+discardCard() failed: 0
+numBuys Count mismatch: 0
+Other players hand/deck count mismatch: 0
+Selected player hand/deck count mismatch: 10000
+***** FAILED RANDOM TEST *****
+
+****** COVERAGE ******
+File 'randomtestcard2.c'
+Lines executed:85.71% of 84
+Creating 'randomtestcard2.c.gcov'
+
+File 'dominion.c'
+Lines executed:12.94% of 564
+Creating 'dominion.c.gcov'
+
         -:    0:Source:dominion.c
         -:    0:Graph:dominion.gcno
         -:    0:Data:dominion.gcda
