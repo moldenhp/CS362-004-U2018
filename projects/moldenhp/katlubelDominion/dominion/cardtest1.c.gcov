@@ -1,0 +1,115 @@
+        -:    0:Source:cardtest1.c
+        -:    0:Graph:cardtest1.gcno
+        -:    0:Data:cardtest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// cardtest1.c 
+        -:    2:// This tests the Adventurer Card 
+        -:    3:
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include <string.h>
+        -:    7:#include <stdio.h>
+        -:    8:#include <assert.h>
+        -:    9:#include "rngs.h"
+        -:   10:
+        -:   11:// global count of test failures
+        -:   12:int failureCount = 0;
+        -:   13:
+        -:   14:// my own assertTrue function - this checkes if two ints are equal or not
+       17:   15:void assertTrue(int a, int b) {
+       17:   16:    if (a == b) {
+       17:   17:        printf("Test: SUCCESSFULLY COMPLETED\n");
+        -:   18:    }
+        -:   19:    else {
+    #####:   20:        printf("Test: FAILED\n");
+    #####:   21:        failureCount++;
+        -:   22:    }
+       17:   23:}
+        -:   24:
+        -:   25:// runs the tests
+        1:   26:int main () {
+        -:   27:    int i;
+        1:   28:    int treasureCount = 0;
+        1:   29:    int treasureCountOriginal = 0;
+        1:   30:    int numbPlayers = 2;
+        1:   31:    int player0 = 0;
+        1:   32:    int player1 = 1;
+        -:   33:    int card;
+        1:   34:    int handpos = 0;
+        1:   35:    int choice1 = 0, choice2 = 0, choice3 = 0;
+        1:   36:    int bonus = 0;
+        -:   37:
+        -:   38:    // kingdom cards
+        1:   39:    int k[10] = {adventurer, council_room, feast, gardens, mine,
+        -:   40:               remodel, smithy, village, baron, great_hall};
+        -:   41:
+        1:   42:    int seed = 2000;
+        -:   43:
+        -:   44:    // game states
+        -:   45:    struct gameState state, stateOriginal;
+        -:   46:
+        1:   47:    printf("Testing -> adventurerCard()\n");
+        1:   48:    memset(&state,23,sizeof(struct gameState));
+        1:   49:    memset(&stateOriginal,23,sizeof(struct gameState));
+        -:   50:
+        -:   51:    // create a state
+        1:   52:    initializeGame(numbPlayers, k, seed, &state);
+        -:   53:
+        -:   54:    // copy it to preserve it
+        1:   55:    memcpy(&stateOriginal, &state, sizeof(struct gameState));
+        -:   56:
+        1:   57:    cardEffect(adventurer, choice1, choice2, choice3, &state, handpos, &bonus);
+        -:   58:
+        1:   59:    printf("\nPlayer0 gains 2 cards\n");
+        1:   60:    assertTrue(state.handCount[player0],stateOriginal.handCount[player0]+2);
+        -:   61:
+        -:   62:    // checks how much treasure is gained
+        8:   63:    for (i = 0; i < state.handCount[player0]; i++) {
+        7:   64:        card = state.hand[player0][i];
+        7:   65:        if (card == copper || card == silver || card == gold) {
+        6:   66:            treasureCount++;
+        -:   67:        }
+        -:   68:    }
+        -:   69:
+        -:   70:    // checks default treasure count
+        6:   71:    for (i = 0; i < stateOriginal.handCount[player0]; i++) {
+        5:   72:        card = stateOriginal.hand[player0][i];
+        5:   73:        if (card == copper || card == silver || card == gold) {
+        4:   74:            treasureCountOriginal++;
+        -:   75:        }
+        -:   76:    }
+        -:   77:
+        1:   78:    printf("\nPlayer0 gains 2 treasure cards\n");
+        1:   79:    assertTrue(treasureCountOriginal+2,treasureCount);
+        -:   80:
+        1:   81:    printf("\nNo change to victory card piles\n");
+        1:   82:    printf("Province Pile\n");
+        1:   83:    assertTrue(state.supplyCount[province],stateOriginal.supplyCount[province]);
+        1:   84:    printf("Duchy Pile\n");
+        1:   85:    assertTrue(state.supplyCount[duchy],stateOriginal.supplyCount[duchy]);
+        1:   86:    printf("Estate Pile\n");
+        1:   87:    assertTrue(state.supplyCount[estate],stateOriginal.supplyCount[estate]);
+        -:   88:
+        1:   89:    printf("\nNo change to kingdom card piles\n");
+       11:   90:    for (i = 0; i < 10; i++) {
+       10:   91:        printf("checking card piles...\n");
+       10:   92:        assertTrue(state.supplyCount[k[i]],stateOriginal.supplyCount[k[i]]);
+        -:   93:    }
+        -:   94:
+        1:   95:    printf("\nPlayer1 was not affected\n");
+        1:   96:    printf("Hand Count\n");
+        1:   97:    assertTrue(state.handCount[player1],stateOriginal.handCount[player1]);
+        1:   98:    printf("Deck Count\n");
+        1:   99:    assertTrue(state.deckCount[player1],stateOriginal.deckCount[player1]);
+        -:  100:
+        1:  101:    if (failureCount) {
+    #####:  102:        printf("\nTEST FAILED\n");
+    #####:  103:        printf("Fails: %d\n",failureCount);
+        -:  104:    }
+        -:  105:    else {
+        1:  106:        printf("\nTEST SUCCESSFULLY COMPLETED\n\n");
+        -:  107:    }
+        -:  108:
+        1:  109:    return 0;
+        -:  110:}
